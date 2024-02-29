@@ -14,7 +14,7 @@ void print_num(int n){
 }
 int main (){
 
-    int rows = 9;
+    int rows = 6;
     for(int i = 1 ; i <= rows ; i++){
         print_sp(rows,i);
         print_num(i);
