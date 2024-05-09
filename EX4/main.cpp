@@ -58,7 +58,8 @@ class Car{
     
 
     private:   //私人使用
-    
+    Engine m_Engine;
+    Fueltank m_Fueltank;
     int Max_Seating;
     int m_price;
     void m_Updateprice(int base = 500000){
@@ -66,8 +67,7 @@ class Car{
     }
 
     public:     //公用
-    Engine m_Engine;
-    Fueltank m_Fueltank;
+    
     string m_brand;
     string m_model;
     int m_year;
