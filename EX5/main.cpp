@@ -20,7 +20,6 @@ private:
     ifstream inpt;
     string line;
     int count = 0;
-    string *save = new string[1000];
 public:
     void openfile(){inpt.open("main.cpp");}
     void closefile(){inpt.close();}
