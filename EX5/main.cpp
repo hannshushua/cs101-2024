@@ -20,7 +20,7 @@ private:
     ifstream inpt;
     string line;
     int count = 0;
-    string *save = new string[1000];
+    string save[1000];
 public:
     void openfile(){inpt.open("main.cpp");}
     void closefile(){inpt.close();}
@@ -35,11 +35,8 @@ public:
         }
         cout << count << " classes in main.cpp" << endl;
         closefile();
-        for(int i = 0 ; i < count ; i++){
-            cout << save[i] << endl;
-            delete save;
-        }
-        delete [] save;
+        for(int i = 0 ; i < count ; i++){cout << save[i] << endl;}
+        
     }
 };
 int main() {
