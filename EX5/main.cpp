@@ -23,20 +23,20 @@ private:
     string *save = new string[1000];
 public:
     void openfile(){inpt.open("main.cpp");}
+    void closefile(){inpt.close();}
     void showclass(){
         openfile();
         int count = 0;
         while(getline(inpt, line)){
             if((line[0] == 'c' && line[1] == 'l'))count++;
-            
         }
         cout << count << " classes in main.cpp" << endl;
-        inpt.close();
+        closefile();
         openfile();
         while(getline(inpt, line)){
             if((line[0] == 'c' && line[1] == 'l'))cout << line << endl;
         }
-        inpt.close();
+        closefile();
     }
 };
 int main() {
