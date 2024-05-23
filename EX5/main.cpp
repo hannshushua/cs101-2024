@@ -20,6 +20,7 @@ private:
     ifstream inpt;
     string line;
     int count = 0;
+    string *save = new string[1000];
 public:
     void openfile(){inpt.open("main.cpp");}
     void closefile(){inpt.close();}
@@ -27,15 +28,18 @@ public:
         openfile();
         int count = 0;
         while(getline(inpt, line)){
-            if((line[0] == 'c' && line[1] == 'l'))count++;
+            if((line[0] == 'c' && line[1] == 'l')){
+                save[count] = line;
+                count++;
+            }
         }
         cout << count << " classes in main.cpp" << endl;
         closefile();
-        openfile();
-        while(getline(inpt, line)){
-            if((line[0] == 'c' && line[1] == 'l'))cout << line << endl;
+        for(int i = 0 ; i < count ; i++){
+            cout << save[i] << endl;
+            delete save;
         }
-        closefile();
+        delete [] save;
     }
 };
 int main() {
